@@ -1,6 +1,6 @@
 //find filename & directory set as variable
 
-PhotoFile = File.name;
+PhotoFile = getInfo("image.filename"); //filename of photo
 PhotoName = File.nameWithoutExtension;
 PhotoDuplicate = PhotoName+"-1.JPG";
 Directory = File.directory; //Find the working directory
