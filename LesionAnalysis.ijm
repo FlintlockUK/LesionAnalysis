@@ -2,6 +2,8 @@
 Instead, try and capture all lesions within a single photo and allow user to say which lesion is which
 Could possibly develop all for a photo later, after including set scale measurement at beginning?*/
 
+macro "Lesion detection" [q]{
+
 setBatchMode(true); //batch mode on
 
 PhotoFile = getInfo("image.filename"); //filename of photo
@@ -23,3 +25,4 @@ setBatchMode(false); //exit batch mode
 selectWindow(PhotoFile); //select original
 roiManager("Show All"); //show detected lesions
 
+}
