@@ -4,7 +4,7 @@ Could possibly develop all for a photo later, after including set scale measurem
 
 macro "Lesion detection [q]" {
 
-//setBatchMode(true); //batch mode on
+setBatchMode(true); //batch mode on
 
 PhotoFile = getInfo("image.filename"); //filename of photo
 PhotoName = File.nameWithoutExtension; //name of photo (no file extension)
@@ -25,7 +25,7 @@ run("Gaussian Blur...", "sigma=2 slice"); //run small gaussian blur to obscure a
 run("Convert to Mask", "method=Li background=Light calculate"); //Automatically filters for lesions based on Li method with the background presumed as light, should isolate most lesions
 run("Analyze Particles...", "size=5.00-Infinity circularity=0.05-1.00 exclude clear add slice"); //analyse particles based on being >5mm and at least mostly circular.
 close(PhotoDuplicate); //close the edited duplicate photo
-//setBatchMode(false); //exit batch mode
+setBatchMode(false); //exit batch mode
 
 selectWindow(PhotoFile); //select original
 roiManager("Show All"); //show detected lesions
